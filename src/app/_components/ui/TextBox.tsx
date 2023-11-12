@@ -1,0 +1,37 @@
+import { FC } from 'react';
+import { TextBoxProps } from '@/app/_types';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { CardContent, Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
+
+export const TextBox: FC<TextBoxProps> = ({ text }) => {
+  const { toast } = useToast();
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    toast({
+      description: 'Copied to clipboard!',
+    });
+  };
+
+  return (
+    <Card>
+      <CardContent className="border p-4">
+        <ScrollArea className="h-80 w-full rounded-md border">
+          <div className="p-2 text-sm text-left">
+            <p>{text}</p>
+          </div>
+        </ScrollArea>
+        <div className="flex justify-between">
+          <Button className="mt-4" size="sm" variant="secondary">
+            Fix typos with AI
+          </Button>
+          <Button className="mt-4" size="sm" variant="outline" onClick={handleCopy}>
+            Copy
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
