@@ -23,13 +23,17 @@ export const TextBox: FC<TextBoxProps> = ({ text }) => {
             <p>{text}</p>
           </div>
         </ScrollArea>
-        <div className="flex justify-between">
-          <Button className="mt-4" size="sm" variant="secondary">
-            Fix typos with AI
-          </Button>
-          <Button className="mt-4" size="sm" variant="outline" onClick={handleCopy}>
-            Copy
-          </Button>
+        <div className="sm:flex sm:justify-between">
+          <div className="mt-4">
+            <Button size="sm" variant="secondary">
+              Fix typos with AI
+            </Button>
+          </div>
+          <div className="mt-4">
+            <Button size="sm" variant="outline" onClick={handleCopy}>
+              Copy
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>
