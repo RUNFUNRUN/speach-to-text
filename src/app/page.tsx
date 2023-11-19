@@ -18,7 +18,7 @@ export default function Home() {
     <main>
       <div className="w-full px-4 py-4">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-[3.5rem]">speach-to-text</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl sm:leading-[3.5rem]">speach-to-text</h1>
         </div>
         <section className="container mx-auto w-full">
           <Tabs className="flex flex-col gap-2 items-start w-full" defaultValue="audioFile">
