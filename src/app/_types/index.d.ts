@@ -24,3 +24,7 @@ export type AlertProps = {
 export type TextBoxProps = {
   text: string;
 };
+
+export type ApiRes = {
+  text: string;
+};
