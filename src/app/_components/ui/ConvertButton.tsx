@@ -73,8 +73,6 @@ export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setFile, s
     formData.append('apiKey', apiKey);
     formData.append('file', file);
 
-    console.log(formData);
-
     const res: ApiRes | void = await fetch('/api/convert', {
       method: 'POST',
       body: formData,
