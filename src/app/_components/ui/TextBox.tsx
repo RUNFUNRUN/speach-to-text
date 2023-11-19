@@ -25,7 +25,7 @@ export const TextBox: FC<TextBoxProps> = ({ text }) => {
         </ScrollArea>
         <div className="sm:flex sm:justify-between">
           <div className="mt-4">
-            <Button size="sm" variant="secondary">
+            <Button size="sm" variant="secondary" disabled>
               Fix typos with AI
             </Button>
           </div>
