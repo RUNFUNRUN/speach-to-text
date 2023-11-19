@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { TabsTrigger, TabsList, TabsContent, Tabs } from '@/components/ui/tabs';
+import { Toaster } from '@/components/ui/toaster';
 import { AudioFile } from './_components/tabContent/AudioFile';
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
           </Tabs>
         </section>
       </div>
+      <Toaster />
     </main>
   );
 }
