@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { speachToText } from '../_lib/openai';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 export async function POST(req: NextRequest) {
   try {
     const formdata = await req.formData();

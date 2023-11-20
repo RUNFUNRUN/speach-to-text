@@ -34,11 +34,14 @@ export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText })
     return file.size < maxSizeInBytes;
   };
 
-  const fileFormats = ['flac', 'mp3', 'mp4', 'mpeg', 'mpga', 'm4a', 'ogg', 'wav', 'webm'];
+  const fileFormats = ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm'];
 
-  const checkFileFormat = (filename: string): boolean => {
-    const extension = filename.split('.').pop()?.toLowerCase();
-    return fileFormats.includes(extension ?? '');
+  const checkFileFormat = (file: File): boolean => {
+    if (!file) {
+      return false;
+    }
+    const mime = file.type.split('/')[1];
+    return fileFormats.includes(mime);
   };
 
   const handleClick = async () => {
@@ -54,7 +57,7 @@ export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText })
       return;
     }
 
-    if (!file.type.includes('audio') || !checkFileFormat(file.name)) {
+    if (!file.type.includes('audio') || !checkFileFormat(file)) {
       setAlert(fileFormatAlert);
       setOpen(true);
       return;
