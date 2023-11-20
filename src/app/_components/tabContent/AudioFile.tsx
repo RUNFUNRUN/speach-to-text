@@ -24,7 +24,7 @@ export const AudioFile: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
           <Input type="file" onChange={handleFileChange} />
         </div>
         <div className="mt-6 sm:m-auto">
-          <ConvertButton apiKey={apiKey} file={file} setFile={setFile} setText={setText} />
+          <ConvertButton apiKey={apiKey} file={file} setText={setText} />
         </div>
       </div>
       <div className="w-4/5 mx-auto mt-10">

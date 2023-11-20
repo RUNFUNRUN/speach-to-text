@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { Alert } from './Alert';
 
-export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setFile, setText }) => {
+export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [alert, setAlert] = useState<AlertInfo>({ title: '', description: '' });

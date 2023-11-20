@@ -6,7 +6,6 @@ export type ApiKeyProps = {
 export type ConvertButtonProps = {
   apiKey: string;
   file: File | undefined;
-  setFile: Dispatch<SetStateAction<File | undefined>>;
   setText: Dispatch<SetStateAction<string>>;
 };
 
