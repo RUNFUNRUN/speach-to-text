@@ -11,6 +11,7 @@ export const Recording: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
   const { file, startRecording, stopRecording, isAudio } = useRecord();
 
   const handleDownload = () => {
+    if (!file) return;
     const url = URL.createObjectURL(file);
     const a = document.createElement('a');
     a.href = url;
