@@ -45,6 +45,8 @@ export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText })
   };
 
   const handleClick = async () => {
+    console.log(file);
+
     if (!apiKey) {
       setAlert(apiAlert);
       setOpen(true);

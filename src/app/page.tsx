@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { TabsTrigger, TabsList, TabsContent, Tabs } from '@/components/ui/tabs';
 import { Toaster } from '@/components/ui/toaster';
 import { AudioFile } from './_components/tabContent/AudioFile';
+import { Recording } from './_components/tabContent/Recorfing';
 
 export default function Home() {
   const [apiKey, setApiKey] = useState<string>('');
@@ -33,7 +34,7 @@ export default function Home() {
             </TabsContent>
             <TabsContent className="p-1 w-full flex justify-center" value="recording">
               <div className="mb-4 pb-4 w-full">
-                <p className="text-sm font-medium">coming soon...</p>
+                <Recording apiKey={apiKey} setApiKey={setApiKey} />
               </div>
             </TabsContent>
           </Tabs>

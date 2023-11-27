@@ -18,7 +18,7 @@ export const AudioFile: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
   return (
     <div className="text-center">
       <SetApiKeyButton apiKey={apiKey} setApiKey={setApiKey} />
-      <p className="text-sm font-medium py-4">Upload audio file</p>
+      <p className="text-sm font-medium my-4">Upload audio file</p>
       <div className="sm:flex sm:max-w-lg sm:mx-auto">
         <div className="mx-auto max-w-2xl sm:m-0">
           <Input type="file" onChange={handleFileChange} />
