@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { AlertProps } from '@/app/_types';
 import {
   AlertDialog,
@@ -10,7 +9,7 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 
-export const Alert: FC<AlertProps> = ({ info, open, setOpen }) => {
+export const Alert = ({ info, open, setOpen }: AlertProps) => {
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogContent>

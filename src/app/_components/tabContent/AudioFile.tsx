@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { ApiKeyProps } from '@/app/_types';
 import { Input } from '@/components/ui/input';
 import { SetApiKeyButton } from '../ui/SetApiKeyButton';
 import { ConvertButton } from '../ui/ConvertButton';
 import { TextBox } from '../ui/TextBox';
 
-export const AudioFile: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
+export const AudioFile = ({ apiKey, setApiKey }: ApiKeyProps) => {
   const [file, setFile] = useState<File | undefined>(undefined);
   const [text, setText] = useState<string>('');
 
@@ -28,7 +28,7 @@ export const AudioFile: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
         </div>
       </div>
       <div className="w-4/5 mx-auto mt-10">
-        <TextBox text={text} />
+        <TextBox apiKey={apiKey} text={text} />
       </div>
     </div>
   );

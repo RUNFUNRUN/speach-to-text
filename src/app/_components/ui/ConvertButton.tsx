@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { AlertInfo, ConvertButtonProps } from '@/app/_types';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { Alert } from './Alert';
 import { speachToText } from '@/lib/openai';
 
-export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText }) => {
+export const ConvertButton = ({ apiKey, file, setText }: ConvertButtonProps) => {
   const [open, setOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [alert, setAlert] = useState<AlertInfo>({ title: '', description: '' });

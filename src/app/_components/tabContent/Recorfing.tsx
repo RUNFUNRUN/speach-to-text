@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { ApiKeyProps } from '@/app/_types';
 import { SetApiKeyButton } from '../ui/SetApiKeyButton';
 import { ConvertButton } from '../ui/ConvertButton';
@@ -6,7 +6,7 @@ import { TextBox } from '../ui/TextBox';
 import { useRecord } from '@/app/_hooks/record';
 import { Button } from '@/components/ui/button';
 
-export const Recording: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
+export const Recording = ({ apiKey, setApiKey }: ApiKeyProps) => {
   const [text, setText] = useState<string>('');
   const { file, startRecording, stopRecording, isAudio } = useRecord();
 
@@ -60,7 +60,7 @@ export const Recording: FC<ApiKeyProps> = ({ apiKey, setApiKey }) => {
         <ConvertButton apiKey={apiKey} file={file} setText={setText} />
       </div>
       <div className="w-4/5 mx-auto mt-10">
-        <TextBox text={text} />
+        <TextBox apiKey={apiKey} text={text} />
       </div>
     </div>
   );

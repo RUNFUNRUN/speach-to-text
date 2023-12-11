@@ -21,5 +21,12 @@ export type AlertProps = {
 };
 
 export type TextBoxProps = {
+  apiKey: string;
   text: string;
+};
+
+export type FixButtonProps = {
+  apiKey: string;
+  text: string;
+  setText: Dispatch<SetStateAction<string>>;
 };
