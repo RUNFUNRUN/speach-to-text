@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
-import { AlertInfo, ApiRes, ConvertButtonProps } from '@/app/_types';
+import { AlertInfo, ConvertButtonProps } from '@/app/_types';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { Alert } from './Alert';
+import { speachToText } from '@/lib/openai';
 
 export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText }) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -71,31 +72,16 @@ export const ConvertButton: FC<ConvertButtonProps> = ({ apiKey, file, setText })
 
     setLoading(true);
 
-    const formData = new FormData();
-
-    formData.append('apiKey', apiKey);
-    formData.append('file', file);
-
-    const res: ApiRes | void = await fetch('/api/convert', {
-      method: 'POST',
-      body: formData,
-    })
-      .then((res) => {
-        if (res.status !== 200) {
-          return;
-        }
-        return res.json();
-      })
-      .catch((err) => console.error(err));
-
-    if (!res) {
+    try {
+      const text = await speachToText(apiKey, file);
+      setText(text);
+    } catch (e) {
       setAlert({ title: 'Something went wrong.', description: 'Please try again.' });
       setOpen(true);
       setLoading(false);
       return;
     }
 
-    await setText(res.text);
     setLoading(false);
   };
 
