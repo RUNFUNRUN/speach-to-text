@@ -3,6 +3,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { CardContent, Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { FixButton } from './FixButton';
 
 export const TextBox = ({ apiKey, text }: TextBoxProps) => {
   const { toast } = useToast();
@@ -24,9 +25,7 @@ export const TextBox = ({ apiKey, text }: TextBoxProps) => {
         </ScrollArea>
         <div className="sm:flex sm:justify-between">
           <div className="mt-4">
-            <Button size="sm" variant="secondary">
-              Fix typos with AI
-            </Button>
+            <FixButton apiKey={apiKey} text={text} />
           </div>
           <div className="mt-4">
             <Button size="sm" variant="outline" onClick={handleCopy}>
