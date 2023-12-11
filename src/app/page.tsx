@@ -22,18 +22,19 @@ export default function Home() {
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl sm:leading-[3.5rem]">speach-to-text</h1>
         </div>
         <section className="container mx-auto w-full">
-          <Tabs className="flex flex-col gap-2 items-start w-full" defaultValue="audioFile">
+          <Tabs className="flex flex-col items-start w-full" defaultValue="audioFile">
             <TabsList className="justify-center flex gap-4 w-full">
               <TabsTrigger value="audioFile">audio file</TabsTrigger>
               <TabsTrigger value="recording">recording</TabsTrigger>
             </TabsList>
-            <TabsContent className="p-1 w-full flex justify-center" value="audioFile">
-              <div className="mb-4 pb-4 w-full">
+            <div className="m-2" />
+            <TabsContent className="w-full flex justify-center" value="audioFile">
+              <div className="w-full">
                 <AudioFile apiKey={apiKey} setApiKey={setApiKey} />
               </div>
             </TabsContent>
-            <TabsContent className="p-1 w-full flex justify-center" value="recording">
-              <div className="mb-4 pb-4 w-full">
+            <TabsContent className="m-0 w-full flex justify-center" value="recording">
+              <div className="w-full">
                 <Recording apiKey={apiKey} setApiKey={setApiKey} />
               </div>
             </TabsContent>
