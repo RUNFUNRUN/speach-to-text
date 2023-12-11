@@ -28,7 +28,7 @@ export const AudioFile = ({ apiKey, setApiKey }: ApiKeyProps) => {
         </div>
       </div>
       <div className="w-4/5 mx-auto mt-10">
-        <TextBox apiKey={apiKey} text={text} />
+        <TextBox apiKey={apiKey} text={text} setText={setText} />
       </div>
     </div>
   );

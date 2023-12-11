@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { FixButton } from './FixButton';
 
-export const TextBox = ({ apiKey, text }: TextBoxProps) => {
+export const TextBox = ({ apiKey, text, setText }: TextBoxProps) => {
   const { toast } = useToast();
 
   const handleCopy = () => {
@@ -25,7 +25,7 @@ export const TextBox = ({ apiKey, text }: TextBoxProps) => {
         </ScrollArea>
         <div className="sm:flex sm:justify-between">
           <div className="mt-4">
-            <FixButton apiKey={apiKey} text={text} />
+            <FixButton apiKey={apiKey} text={text} setText={setText} />
           </div>
           <div className="mt-4">
             <Button size="sm" variant="outline" onClick={handleCopy}>
